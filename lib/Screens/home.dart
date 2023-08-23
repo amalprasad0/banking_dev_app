@@ -13,7 +13,12 @@ class ScreenHome extends StatelessWidget {
         title:Text("BACK TO DASHBOARD"),
       ),
       body:SafeArea(
-        child: HomeComponents()
+          child:Column(
+            children: [
+              SizedBox(height: 50),
+              Expanded(child: HomeComponents()),
+            ],
+          )
       )
     );
   }
