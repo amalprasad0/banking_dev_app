@@ -1,6 +1,8 @@
 import 'package:banking_dev_app/Screens/home.dart';
 import 'package:flutter/material.dart';
 
+import 'Screens/checkingAccount.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,6 +18,9 @@ class MyApp extends StatelessWidget {
         primarySwatch:Colors.green,
       ),
       home:ScreenHome(),
+    //   routes: {
+    //   '/details': (context) => ScreenOption(),
+    // },
     );
   }
 }

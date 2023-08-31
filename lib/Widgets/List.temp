@@ -1,3 +1,13 @@
+
+
+
+
+
+
+///////
+
+
+
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
@@ -8,14 +18,14 @@ List gfg = [
         "https://t26static.adp.cdp-cdn.com/tiles/270728BE-7284-49DB-8E49-064E8A78359F/1.2/credit-card.png",
     "title": "Checking Account",
     "content1": "Earn a great rate and Enjoy Extended teller hours",
-    "title1": "Checkings Account Tit",
+    "title1": "Checkings Account Tit4",
   },
   {
     "id": 2,
     "img_url":
         "https://t26static.adp.cdp-cdn.com/tiles/270728BE-7284-49DB-8E49-064E8A78359F/1.2/piggybank.png",
     "title": "Savings Account",
-    "content1": "Earn a great rate and Enjoy Extended teller hour",
+    "content1": "Earn a great rate and Enjoy Extended teller hours",
     "title1": "Savings Account Title!",
   },
   {
@@ -36,11 +46,12 @@ class HomeComponents extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return ListView.builder(
       itemCount: gfg.length,
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
-          // onTap: () => Navigator.pushNamed(context, '/details'),
+          onTap: () => print("card pressed $index"),
           child: Container( 
             height: 200,
             margin: EdgeInsets.all(10),
@@ -160,3 +171,6 @@ class ContentWidget extends StatelessWidget {
     );
   }
 }
+
+
+///////
