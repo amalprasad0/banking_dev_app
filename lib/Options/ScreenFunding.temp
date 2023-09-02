@@ -1,0 +1,129 @@
+import 'package:banking_dev_app/Options/ScreenReview.dart';
+import 'package:flutter/material.dart';
+
+var items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+
+class ScreenFunding extends StatelessWidget {
+  final int id;
+  const ScreenFunding({Key? key, required this.id}) : super(key: key);
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("BACK TO DASHBOARD"),
+      ),
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "How Much do you want to Transfer to open the account?",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              SizedBox(height: 20),
+              TextField(
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+                decoration: InputDecoration(
+                  fillColor: Colors.white,
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(0),
+                  ),
+                  hintText: '\$0',
+                  hintStyle: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Text(
+                "How do you want to fund your account?",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                color: Colors.white,
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton(
+                    icon: const Icon(Icons.keyboard_arrow_down),
+                    isExpanded: true,
+                    items: items.map((String item) {
+                      return DropdownMenuItem(
+                        value: item,
+                        child: Text(item),
+                      );
+                    }).toList(),
+                    onChanged: (value) {
+                      // Handle the selection
+                    },
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.90,
+                      height: MediaQuery.of(context).size.height *
+                          0.07, // 7% of the screen height
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(context,MaterialPageRoute(builder: (context) => ScreenReview()));
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          
+                        ),
+                        child: Text("NEXT",style: TextStyle(
+                          fontSize: 20,
+                        ),),
+                      ),
+                    ),
+                    SizedBox(height: 10), // Space between buttons
+                    TextButton(
+                      onPressed: () {
+                        // Add your onPressed logic here
+                      },
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 10),
+                      ),
+                      child: Text(
+                        "I'LL FUND MY ACCOUNT LATER",
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                          fontSize: 17,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+

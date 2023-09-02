@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Widgets/homeComponents.dart';
-import '../Widgets/widget_progress.dart';
-import '../Widgets/firstScreen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ScreenHome extends StatelessWidget {
   const ScreenHome({super.key});
@@ -16,7 +15,7 @@ class ScreenHome extends StatelessWidget {
           child:Column(
             children: [
               SizedBox(height: 50),
-              HomeComponents(),
+              Expanded(child: HomeComponents()),
             ],
           )
       )
